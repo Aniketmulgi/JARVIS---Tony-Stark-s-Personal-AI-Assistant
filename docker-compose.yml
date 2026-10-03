@@ -1,0 +1,9 @@
+services:
+  jarvis-server:
+    build: ./server
+    env_file: .env
+    ports: ["4000:4000"]
+  jarvis-client:
+    build: ./client
+    ports: ["5173:5173"]
+    depends_on: [jarvis-server]
